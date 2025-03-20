@@ -33,7 +33,7 @@ export default function Members() {
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3nxl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
@@ -83,7 +83,7 @@ export default function Members() {
           </TabsContent>
 
           <TabsContent value="general">
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {memberCategories.general.map((member, index) => (
                 <MemberCard key={index} member={member} index={index} isInView={isInView} small />
               ))}
@@ -98,7 +98,7 @@ export default function Members() {
 function MemberCard({ member, index, isInView, featured = false, small = false }) {
   return (
     <motion.div
-      className={`${featured ? "max-w-sm" : small ? "w-full" : "w-full"} bg-gray-900/50 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group`}
+      className={`w-full max-w-xs mx-auto bg-gray-900/50 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group`}
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ delay: 0.1 * index, duration: 0.8 }}
@@ -114,8 +114,8 @@ function MemberCard({ member, index, isInView, featured = false, small = false }
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <div className={`p-4 ${small ? "text-center" : "text-center"}`}>
-        <h3 className={`${featured ? "text-xl" : small ? "text-base" : "text-lg"} font-bold text-white mb-1`}>
+      <div className="p-4 text-center">
+        <h3 className={`${featured ? "text-xl" : "text-lg"} font-bold text-white mb-1`}>
           {member.name}
         </h3>
         <p className="text-purple-400 text-sm">{member.role}</p>
@@ -123,4 +123,3 @@ function MemberCard({ member, index, isInView, featured = false, small = false }
     </motion.div>
   )
 }
-
