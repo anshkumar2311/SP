@@ -17,6 +17,7 @@ export default function Events() {
       time: "9:00 AM - 5:00 PM",
       description: "Our flagship event featuring 50+ companies offering roles across various domains.",
       isPast: true,
+      image: "/placeholder.svg?height=400&width=400" // Add image path
     },
     {
       title: "Resume Building Workshop",
@@ -25,6 +26,7 @@ export default function Events() {
       time: "2:00 PM - 4:00 PM",
       description: "Learn how to craft an impressive resume that stands out to recruiters.",
       isPast: true,
+      image: "/placeholder.svg?height=400&width=400" // Add image path
     },
     {
       title: "Mock Interview Sessions",
@@ -33,6 +35,7 @@ export default function Events() {
       time: "10:00 AM - 4:00 PM",
       description: "Practice your interview skills with industry professionals and receive feedback.",
       isPast: false,
+      image: "/placeholder.svg?height=400&width=400" // Add image path
     },
     {
       title: "Tech Career Fair",
@@ -41,6 +44,7 @@ export default function Events() {
       time: "11:00 AM - 6:00 PM",
       description: "Connect with leading tech companies and explore internship and job opportunities.",
       isPast: false,
+      image: "/placeholder.svg?height=400&width=400" // Add image path
     },
   ]
 
@@ -77,6 +81,12 @@ export default function Events() {
                 <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:ml-auto" : "md:pl-12"}`}>
                   <div className="bg-gray-900/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300">
                     <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 hidden md:block" />
+                    
+                    {event.image && (
+                      <div className="mb-4">
+                        <img src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-lg" />
+                      </div>
+                    )}
 
                     <div className="mb-4">
                       <span
