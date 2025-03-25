@@ -1,7 +1,7 @@
 # SPC Website
 LINK - [CLICK HERE TO GO TO WEBSITE](https://spc-gamma.vercel.app/)
 
-This is the repository for the SPC (Statistical Programming Committee) website..
+This is the repository for the Student Placement Committee) website..
 
 ## Overview
 
